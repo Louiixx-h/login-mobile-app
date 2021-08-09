@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="initial_title">Trabalhe em time da melhor forma.</string>
+    <string name="initial_description">
+        Colabore com seus colegas de trabalho, rápido, facil e inteligente.
+        Trabalhe de qualquer lugar a qualquer hora.
+    </string>
+    <string name="register">Registrar-se</string>
+    <string name="login">Login</string>
+    <string name="login_title">Vamos fazer seu login.</string>
+    <string name="login_description">Bem vindo de volta, estamos te aguardando.</string>
+    <string name="login_hint_username">Email</string>
+    <string name="login_hint_password">Senha</string>
+    <string name="text_register">Não tem uma conta ainda? Registre-se.</string>
+    <string name="register_title">Seja um assinante</string>
+    <string name="btn_register">Cadastrar</string>
+    <string name="usuario_inexistente">Usuário inexistente! \nVerifique suas credenciais.</string>
+    <string name="falha_no_login">Erro ao fazer login. \nVerifique suas credenciais.</string>
+    <string name="sucesso_no_login">Login efetuado com sucesso!</string>
+    <string name="erro_ao_cadastrar_usuario">Erro ao cadastrar usuário.\nVerifique suas credenciais.</string>
+    <string name="cadastro_realizado_com_sucesso">Cadastro realizado com sucesso!</string>
+    <string name="campo_nao_pode_ser_vazio">Campo não pode ficar vazio.</string>
+    <string name="campo_vazio">Campo vazio!</string>
+</resources>

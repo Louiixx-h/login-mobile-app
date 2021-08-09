@@ -1,0 +1,52 @@
+package br.com.luishenrique.login.presentation.register
+
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
+class RegisterPresenter(private val view: RegisterContract.View): RegisterContract.Presenter {
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var email: String
+    private lateinit var password: String
+    private lateinit var user: FirebaseUser
+
+    override fun initializeFirebaseAuth() {
+        auth = Firebase.auth
+    }
+
+    override fun registerUser(email: String, password: String) {
+        this.email = email
+        this.password = password
+
+        if (!isFieldValid()) return
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(view.requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    view.registeredSuccessfully()
+                    val firebaseUser = auth.currentUser
+                    if ( firebaseUser != null) {
+                        user = firebaseUser
+                    }
+                } else {
+                    view.errorWhenRegisteringUser(task.exception)
+                }
+            }
+    }
+
+    override fun isFieldValid(): Boolean {
+        if (email.isEmpty() && password.isEmpty()) {
+            view.emptyEmailOrPassword()
+            return false
+        } else if (email.isEmpty()) {
+            view.emptyEmail()
+            return false
+        } else if (password.isEmpty()) {
+            view.emptyPassword()
+            return false
+        }
+        return true
+    }
+}

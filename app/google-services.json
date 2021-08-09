@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "128637976475",
+    "project_id": "login-mobile-19d54",
+    "storage_bucket": "login-mobile-19d54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128637976475:android:4070dfec3cba5c53b2ab3e",
+        "android_client_info": {
+          "package_name": "br.com.luishenrique.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128637976475-ls88rt5v2dtvf9krrr94lf6hf9k9o8rd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZnZywSSvJwfn4qWlNsg2ckZOcfnOR1Q8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128637976475-ls88rt5v2dtvf9krrr94lf6hf9k9o8rd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
