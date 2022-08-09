@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_dark"
-    tools:context=".presentation.login.LoginActivity">
+    android:background="@color/black_dark">
 
     <TextView
         android:id="@+id/login_title"
@@ -67,6 +66,8 @@
         android:textColorHint="@color/white"
         app:hintTextColor="@color/white"
         app:hintAnimationEnabled="true"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/white"
         app:boxStrokeErrorColor="@color/gray_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:paddingHorizontal="20dp"
+            android:inputType="textPassword"
             android:background="@drawable/background_edit_text"
             android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>

@@ -1,24 +1,28 @@
-package br.com.luishenrique.login.presentation.login
+package br.com.luislabs.conversaonline.auth.presentation.login
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import br.com.luishenrique.login.R
-import br.com.luishenrique.login.presentation.register.RegisterActivity
-import br.com.luishenrique.login.utils.toast
+import android.view.View
+import androidx.fragment.app.Fragment
+import br.com.luislabs.conversaonline.auth.presentation.register.RegisterFragment
+import br.com.luislabs.auth.utils.toast
+import br.com.luislabs.conversaonline.R
+import br.com.luislabs.conversaonline.home.HomeActivity
+import br.com.luislabs.conversaonline.home.HomeFragment
 import kotlinx.android.synthetic.main.activity_login.*
 import java.lang.Exception
 
-class LoginActivity : AppCompatActivity(), LoginContract.View {
+class LoginFragment : Fragment(R.layout.activity_login), LoginContract.View {
 
     private val presenter: LoginContract.Presenter = LoginPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
 
         presenter.initializeFirebaseAuth()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         login_button.setOnClickListener {
             sendEmailAndPassword(
@@ -37,12 +41,10 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun loginSucessfull() {
-        Log.d("login", "signInWithEmail:success")
-        toast(getString(R.string.sucesso_no_login))
+        requireContext().startActivity(HomeActivity.newInstance(requireContext()))
     }
 
     override fun loginFailed(exception: Exception?) {
-        Log.w("login", "signInWithEmail:failure", exception)
         toast(getString(R.string.falha_no_login))
     }
 
@@ -60,14 +62,14 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun goToRegister() {
-        startActivity(Intent(this, RegisterActivity::class.java))
+        with(parentFragmentManager.beginTransaction()) {
+            replace(R.id.fragmentContainerView, RegisterFragment.newInstance())
+            addToBackStack(null)
+            commit()
+        }
     }
 
     override fun nonExistentUser() {
         toast(getString(R.string.usuario_inexistente))
-    }
-
-    override fun requireActivity(): LoginActivity {
-        return this
     }
 }

@@ -6,7 +6,7 @@
         Trabalhe de qualquer lugar a qualquer hora.
     </string>
     <string name="register">Registrar-se</string>
-    <string name="login">Login</string>
+    <string name="login">Entrar</string>
     <string name="login_title">Vamos fazer seu login.</string>
     <string name="login_description">Bem vindo de volta, estamos te aguardando.</string>
     <string name="login_hint_username">Email</string>
@@ -21,4 +21,6 @@
     <string name="cadastro_realizado_com_sucesso">Cadastro realizado com sucesso!</string>
     <string name="campo_nao_pode_ser_vazio">Campo não pode ficar vazio.</string>
     <string name="campo_vazio">Campo vazio!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

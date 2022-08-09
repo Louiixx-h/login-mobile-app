@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "128637976475",
-    "project_id": "login-mobile-19d54",
-    "storage_bucket": "login-mobile-19d54.appspot.com"
+    "project_number": "410209089693",
+    "firebase_url": "https://save-password-1f1b8-default-rtdb.firebaseio.com",
+    "project_id": "save-password-1f1b8",
+    "storage_bucket": "save-password-1f1b8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:128637976475:android:4070dfec3cba5c53b2ab3e",
+        "mobilesdk_app_id": "1:410209089693:android:8a7f7e232274cf5626fc74",
         "android_client_info": {
-          "package_name": "br.com.luishenrique.login"
+          "package_name": "br.com.luislabs.conversaonline"
         }
       },
       "oauth_client": [
         {
-          "client_id": "128637976475-ls88rt5v2dtvf9krrr94lf6hf9k9o8rd.apps.googleusercontent.com",
+          "client_id": "410209089693-91nagfi1iksqfrm0oqrrpbn3eg2ap3jm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZnZywSSvJwfn4qWlNsg2ckZOcfnOR1Q8"
+          "current_key": "AIzaSyBHT-1QO2pN0L1hsPy-B-EZ3ORxYpMUUCo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "128637976475-ls88rt5v2dtvf9krrr94lf6hf9k9o8rd.apps.googleusercontent.com",
+              "client_id": "410209089693-91nagfi1iksqfrm0oqrrpbn3eg2ap3jm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,4 +1,4 @@
-package br.com.luishenrique.login.utils
+package br.com.luislabs.auth.utils
 
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

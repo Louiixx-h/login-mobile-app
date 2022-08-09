@@ -1,5 +1,6 @@
-package br.com.luishenrique.login.presentation.register
+package br.com.luislabs.conversaonline.auth.presentation.register
 
+import android.app.Activity
 import java.lang.Exception
 
 interface RegisterContract {
@@ -8,9 +9,9 @@ interface RegisterContract {
         fun registeredSuccessfully()
         fun emptyEmailOrPassword()
         fun errorWhenRegisteringUser(exception: Exception?)
-        fun requireActivity(): RegisterActivity
         fun emptyEmail()
         fun emptyPassword()
+        fun requireActivity(): Activity
     }
 
     interface Presenter {

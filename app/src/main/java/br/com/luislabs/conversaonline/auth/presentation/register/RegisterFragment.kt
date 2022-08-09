@@ -1,24 +1,26 @@
-package br.com.luishenrique.login.presentation.register
+package br.com.luislabs.conversaonline.auth.presentation.register
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import br.com.luishenrique.login.R
-import br.com.luishenrique.login.utils.toast
+import android.view.View
+import androidx.fragment.app.Fragment
+import br.com.luislabs.auth.utils.toast
+import br.com.luislabs.conversaonline.R
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register.editEmail
 import kotlinx.android.synthetic.main.activity_register.editPassword
 import java.lang.Exception
 
-class RegisterActivity : AppCompatActivity(), RegisterContract.View {
+class RegisterFragment : Fragment(R.layout.activity_register), RegisterContract.View {
 
     private val presenter: RegisterContract.Presenter = RegisterPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
-
         presenter.initializeFirebaseAuth()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         register_button.setOnClickListener {
             registerUser(
@@ -33,7 +35,6 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
     }
 
     override fun registeredSuccessfully() {
-        Log.d("register", "createUserWithEmail:success")
         toast(getString(R.string.cadastro_realizado_com_sucesso))
     }
 
@@ -51,11 +52,12 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
     }
 
     override fun errorWhenRegisteringUser(exception: Exception?) {
-        Log.w("register", "createUserWithEmail:failure", exception)
         toast(getString(R.string.erro_ao_cadastrar_usuario))
     }
 
-    override fun requireActivity(): RegisterActivity {
-        return this
+    companion object {
+        fun newInstance(): RegisterFragment {
+            return RegisterFragment()
+        }
     }
 }

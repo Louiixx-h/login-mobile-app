@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.luishenrique.login">
+    package="br.com.luislabs.conversaonline">
 
     <application
         android:allowBackup="true"
@@ -10,18 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
-            android:name=".presentation.profile.ProfileActivity"
-            android:exported="true" />
+            android:name=".home.HomeActivity"
+            android:exported="false" />
         <activity
-            android:name=".presentation.register.RegisterActivity"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".presentation.login.LoginActivity"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".presentation.initial.FirstScreenActivity"
+            android:name=".initial.FirstScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

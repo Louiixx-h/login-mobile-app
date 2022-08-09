@@ -1,6 +1,6 @@
-package br.com.luishenrique.login.presentation.login
+package br.com.luislabs.conversaonline.auth.presentation.login
 
-import com.google.firebase.auth.FirebaseUser
+import android.app.Activity
 import java.lang.Exception
 
 interface LoginContract {
@@ -10,10 +10,10 @@ interface LoginContract {
         fun loginFailed(exception: Exception?)
         fun emptyEmailOrPassword()
         fun nonExistentUser()
-        fun requireActivity(): LoginActivity
         fun emptyEmail()
         fun emptyPassword()
         fun goToRegister()
+        fun requireActivity(): Activity
     }
     interface Presenter {
         fun initializeFirebaseAuth()

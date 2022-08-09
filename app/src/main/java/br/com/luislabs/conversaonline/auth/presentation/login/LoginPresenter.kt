@@ -1,11 +1,11 @@
-package br.com.luishenrique.login.presentation.register
+package br.com.luislabs.conversaonline.auth.presentation.login
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class RegisterPresenter(private val view: RegisterContract.View): RegisterContract.Presenter {
+class LoginPresenter(private val view: LoginContract.View): LoginContract.Presenter {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var email: String
@@ -16,22 +16,25 @@ class RegisterPresenter(private val view: RegisterContract.View): RegisterContra
         auth = Firebase.auth
     }
 
-    override fun registerUser(email: String, password: String) {
+    override fun verifyCredentialsAndSubmit(email: String, password: String) {
         this.email = email
         this.password = password
 
         if (!isFieldValid()) return
 
-        auth.createUserWithEmailAndPassword(email, password)
+        sendEmailAndPassword()
+    }
+
+    override fun sendEmailAndPassword() {
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(view.requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    view.registeredSuccessfully()
-                    val firebaseUser = auth.currentUser
-                    if ( firebaseUser != null) {
-                        user = firebaseUser
+                    view.loginSucessfull()
+                    if (auth.currentUser != null) {
+                        user = auth.currentUser!!
                     }
                 } else {
-                    view.errorWhenRegisteringUser(task.exception)
+                    view.loginFailed(task.exception)
                 }
             }
     }
