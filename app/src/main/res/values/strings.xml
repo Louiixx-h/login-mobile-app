@@ -23,4 +23,7 @@
     <string name="campo_vazio">Campo vazio!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_hint_name">Nome</string>
+    <string name="adicionar_foto_de_perfil">Adicionar foto de perfil</string>
+    <string name="falha_ao_tentar_carregar_imagem">Falha ao tentar carregar imagem!</string>
 </resources>

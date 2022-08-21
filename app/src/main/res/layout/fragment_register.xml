@@ -33,11 +33,57 @@
         app:layout_constraintStart_toStartOf="@+id/register_title"
         app:layout_constraintTop_toBottomOf="@+id/register_title" />
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iconProfile"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tiName"
+        app:layout_constraintStart_toStartOf="@+id/tiName"
+        app:layout_constraintTop_toBottomOf="@+id/register_description"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_photo_camera_24"
+        android:contentDescription="@string/adicionar_foto_de_perfil"
+        app:layout_constraintBottom_toBottomOf="@+id/iconProfile"
+        app:layout_constraintEnd_toEndOf="@+id/iconProfile"
+        app:tint="@color/gray" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="@string/login_hint_name"
+        android:textColorHint="@color/white"
+        app:hintAnimationEnabled="true"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconProfile">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/background_edit_text"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="20dp"
         android:hint="@string/login_hint_username"
         android:textColorHint="@color/white"
@@ -45,7 +91,7 @@
         app:hintAnimationEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_description">
+        app:layout_constraintTop_toBottomOf="@+id/tiName">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editEmail"
@@ -60,7 +106,7 @@
         android:id="@+id/tiPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="20dp"
         android:hint="@string/login_hint_password"
         android:textColorHint="@color/white"

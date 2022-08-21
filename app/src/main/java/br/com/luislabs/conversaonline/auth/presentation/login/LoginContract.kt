@@ -14,11 +14,13 @@ interface LoginContract {
         fun emptyPassword()
         fun goToRegister()
         fun requireActivity(): Activity
+        fun loginWithGoogle()
     }
     interface Presenter {
         fun initializeFirebaseAuth()
         fun isFieldValid(): Boolean
         fun verifyCredentialsAndSubmit(email: String, password: String)
         fun sendEmailAndPassword()
+        fun loginWithGoogle()
     }
 }

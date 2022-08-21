@@ -7,11 +7,10 @@ import br.com.luislabs.conversaonline.auth.presentation.register.RegisterFragmen
 import br.com.luislabs.auth.utils.toast
 import br.com.luislabs.conversaonline.R
 import br.com.luislabs.conversaonline.home.HomeActivity
-import br.com.luislabs.conversaonline.home.HomeFragment
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.fragment_login.*
 import java.lang.Exception
 
-class LoginFragment : Fragment(R.layout.activity_login), LoginContract.View {
+class LoginFragment : Fragment(R.layout.fragment_login), LoginContract.View {
 
     private val presenter: LoginContract.Presenter = LoginPresenter(this)
 
@@ -31,6 +30,10 @@ class LoginFragment : Fragment(R.layout.activity_login), LoginContract.View {
             )
         }
 
+        loginButtonGoogle.setOnClickListener {
+            loginWithGoogle()
+        }
+
         text_register.setOnClickListener {
             goToRegister()
         }
@@ -40,8 +43,13 @@ class LoginFragment : Fragment(R.layout.activity_login), LoginContract.View {
         presenter.verifyCredentialsAndSubmit(email, password)
     }
 
+    override fun loginWithGoogle() {
+        presenter.loginWithGoogle()
+    }
+
     override fun loginSucessfull() {
         requireContext().startActivity(HomeActivity.newInstance(requireContext()))
+        requireActivity().finish()
     }
 
     override fun loginFailed(exception: Exception?) {
